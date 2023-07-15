@@ -45,10 +45,11 @@ export default function Schedule(){
             startAt.hour === HOY.getHours() 
             ? startAt.minute <= HOY.getMinutes() : true)
         .filter(({completed}: TaskEvent)=>!completed)
-
-    
-    
-
+        .sort((a: TaskEvent,b: TaskEvent)=>a.endAt.minute-b.endAt.minute)
+        .sort((a: TaskEvent,b: TaskEvent)=>a.endAt.hour-b.endAt.hour)
+        .sort((a: TaskEvent,b: TaskEvent)=>a.startAt.minute-b.startAt.minute)
+        .sort((a: TaskEvent,b: TaskEvent)=>a.startAt.hour-b.startAt.hour)
+        
     return(
         <div className="flex flex-col gap-2 p-2">
             {actualTaskEvents.map((taskEvent: any, index: number) => <TaskEventComponent key={index} taskEvent={taskEvent}/>)}

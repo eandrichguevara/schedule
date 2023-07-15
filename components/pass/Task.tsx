@@ -23,13 +23,13 @@ export default function Task({taskEvent}: TaskProps){
     }
 
     return (
-        <div className="w-full min-h-[100px] bg-green-600 rounded-xl">
-            <div className="flex justify-evenly items-center h-full ">
+        <div className="w-full min-h-[100px] bg-green-600 rounded-xl px-4 py-2">
+            <div className="flex justify-between items-center gap-2">
                 <span className="uppercase text-2xl font-bold">{taskEvent.name}</span>
                 <input 
                     id={`${taskEvent.id}`} 
                     name="completed" 
-                    className="h-20 w-6" 
+                    className="h-16 w-6" 
                     type="checkbox" 
                     checked={completed} 
                     onChange={(e: any)=>completeTask(taskEvent)} 
