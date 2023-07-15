@@ -12,6 +12,8 @@ export default function Schedule(){
     const TODAY = HOY.getDay()
     let taskEvents = loadTaskEvents()
 
+    console.log("Load TaskEvents: ", taskEvents)
+
     if(!taskEvents){
         const filterTask = tasks.filter(task => {
             let days = task.times
@@ -36,6 +38,8 @@ export default function Schedule(){
                 .flat()
                 .filter(a=>a) //Delete undefined results
 
+        console.log("Create TaskEvents: ", taskEvents)
+
         setTaskEvents(taskEvents)
     }
 
@@ -49,6 +53,8 @@ export default function Schedule(){
         .sort((a: TaskEvent,b: TaskEvent)=>a.endAt.hour-b.endAt.hour)
         .sort((a: TaskEvent,b: TaskEvent)=>a.startAt.minute-b.startAt.minute)
         .sort((a: TaskEvent,b: TaskEvent)=>a.startAt.hour-b.startAt.hour)
+
+    console.log("Actual TaskEvents: ", actualTaskEvents)
         
     return(
         <div className="flex flex-col gap-2 p-2">

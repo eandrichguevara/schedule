@@ -1,10 +1,13 @@
 import { TaskEvent } from "./models"
 
 const HOY = new Date()
-const DATE = `${HOY.getFullYear}-${HOY.getMonth}-${HOY.getDate}`
+const DATE = `${HOY.getFullYear()}-${HOY.getMonth()}-${HOY.getDate()}`
 const TASKEVENTS = "TaskEvents_"+DATE
 
 const bd = () => {
+    console.log("CONST DATE: ", DATE)
+    console.log("TaskEventsID: ", TASKEVENTS);
+    
     if (typeof localStorage !== 'undefined') return localStorage
     else return null
 }
