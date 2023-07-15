@@ -1,4 +1,3 @@
-import PassForm from "@/components/PassForm";
 import Schedule from "@/components/pass/Schedule";
 
 export default function Home() {
