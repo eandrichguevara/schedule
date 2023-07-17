@@ -1,11 +1,11 @@
 export enum dayOfWeek{
+    DOMINGO     = 0,
     LUNES       = 1,
     MARTES      = 2,
     MIÉRCOLES   = 3,
     JUEVES      = 4,
     VIERNES     = 5,
     SÁBADO      = 6,
-    DOMINGO     = 7
 }
 
 export const EVERYDAY: number[] = [
